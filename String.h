@@ -12,7 +12,8 @@ public:
     ~String();
     char* Accessor();
     int length();
-    int capacity() const;
+    int capacity();
+    bool empty();
 
 private:
     char* content_ = nullptr;

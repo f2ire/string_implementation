@@ -7,12 +7,19 @@
 
 String::String()
 {
+    /*
     char* txt = new char[12];
     const char* txt_to_copy = "Hello World";
     for (int i = 0; i < 12; i++) {
         txt[i] = txt_to_copy[i];
     }
     length_ = 11;
+    content_ = txt;
+    */
+    char* txt = new char[1];
+    const char* txt_to_copy = "";
+    txt[0] = txt_to_copy[0];
+    length_ = 0;
     content_ = txt;
 }
 
@@ -34,7 +41,16 @@ String::~String()
     std::cout << "A string has been deleted" << std::endl;
 }
 
-int String::capacity() const {
+int String::capacity(){
     int size_elem = sizeof(char);
     return size_elem*length_;
+}
+
+bool String::empty() {
+    if (length_ == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }

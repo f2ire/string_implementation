@@ -35,3 +35,14 @@ void test_capacity(){
     std::cout << size_str << std::endl;
     std::cout << sizeof(char) << "*" << str.length() << std::endl;
 }
+
+void test_empty(){
+    String str = String();
+    if (str.length() == 0) {
+        std::cout << "Length of string is 0, then it should be empty" << std::endl;
+    }
+    else {
+        std::cout << "Length of string is not null, then it should don't be empty" << std::endl;
+    }
+    std::cout << (str.empty() ? "Is empty" : "Is not empty") << std::endl;
+}

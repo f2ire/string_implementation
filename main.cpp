@@ -20,4 +20,10 @@ int main() {
     std::cout << "---" << std::endl;
     test_capacity();
     std::cout << "______________________________________" << std::endl;
+    std::cout << "Test of empty() : " << std::endl;
+    std::cout << "If the two sentences corresponds, it mean it work as wanted" << std::endl;
+    std::cout << "---" << std::endl;
+    test_empty();
+    std::cout << "______________________________________" << std::endl;
+
 }
