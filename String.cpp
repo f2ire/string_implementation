@@ -31,3 +31,7 @@ String::~String()
     delete content_;
     std::cout << "A string has been deleted" << std::endl;
 }
+
+String::String(const String& other) {  //copy constructor
+    content_ = other.content_;
+}

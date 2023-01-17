@@ -10,3 +10,4 @@
 void test_default_constr();
 void test_destructor();
 void test_lenght();
+void test_copy_constr();

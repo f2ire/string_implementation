@@ -10,6 +10,7 @@ class String {
 public:
     String();
     ~String();
+    String(const String& other); //copy constructor
     char* Accessor();
     int length();
 
