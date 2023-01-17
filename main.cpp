@@ -1,6 +1,6 @@
 #include <iostream>
+#include "string_tests.h"
 
 int main() {
-    std::cout << "Hello World" << std::endl;
-    return 0;
+    test_default_constr();
 }

@@ -7,8 +7,15 @@
 
 
 class String {
+public:
+    String();
 
+    static const char* Accessor(String str);
+
+private:
+    const char* content_;
 };
+
 
 
 #endif //STRING_PROJECT_STRING_H
