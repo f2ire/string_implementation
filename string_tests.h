@@ -12,3 +12,4 @@ void test_destructor();
 void test_length();
 void test_capacity();
 void test_empty();
+void test_reserve();

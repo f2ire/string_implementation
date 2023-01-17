@@ -7,7 +7,6 @@
 
 String::String()
 {
-    /*
     char* txt = new char[12];
     const char* txt_to_copy = "Hello World";
     for (int i = 0; i < 12; i++) {
@@ -15,12 +14,14 @@ String::String()
     }
     length_ = 11;
     content_ = txt;
-    */
+    capacity_ = 11;
+    /*
     char* txt = new char[1];
     const char* txt_to_copy = "";
     txt[0] = txt_to_copy[0];
     length_ = 0;
     content_ = txt;
+     */
 }
 
 char* String::Accessor() {
@@ -43,7 +44,8 @@ String::~String()
 
 int String::capacity(){
     int size_elem = sizeof(char);
-    return size_elem*length_;
+    capacity_ = size_elem*length_;
+    return capacity_;
 }
 
 bool String::empty() {
@@ -52,5 +54,20 @@ bool String::empty() {
     }
     else {
         return false;
+    }
+}
+
+void String::reserve(int n = 0) { //TODO: To modifie because content is not updated
+    if (n < capacity_ or n > max_) {
+        std::cout << "Capacity asked for too small compare to the capacity of the string" << std::endl;
+    }
+    else {
+        char* new_content[n];
+        for (int i=0; i > length_; i++){
+            new_content[i] = &content_[i];
+        }
+        delete content_;
+        content_ = *new_content;
+        capacity_ = n;
     }
 }

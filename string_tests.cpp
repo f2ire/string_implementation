@@ -46,3 +46,10 @@ void test_empty(){
     }
     std::cout << (str.empty() ? "Is empty" : "Is not empty") << std::endl;
 }
+
+void test_reserve(){
+    String str = String();
+    std::cout << "Capacity of " <<str.capacity() << " bytes" << std::endl;
+    str.reserve(50);
+    std::cout << "Capacity of " << str.capacity() << " bytes, after reserved 50 bytes" << std::endl;
+}
