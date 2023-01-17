@@ -8,4 +8,6 @@ include_directories(.)
 add_executable(string_project
         main.cpp
         String.cpp
-        String.h)
+        String.h
+        string_tests.cpp
+        string_tests.h)
