@@ -11,9 +11,11 @@ public:
     String();
     ~String();
     char* Accessor();
+    int length();
 
 private:
     char* content_ = nullptr;
+    int length_ = 0;
 };
 
 

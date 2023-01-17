@@ -23,3 +23,8 @@ void test_destructor() {
     delete str1;
     auto str4 = String();
 }
+
+void test_lenght() {
+    String str = String();
+    std::cout << str.length() << std::endl;
+}

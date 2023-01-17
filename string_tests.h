@@ -9,3 +9,4 @@
 
 void test_default_constr();
 void test_destructor();
+void test_lenght();

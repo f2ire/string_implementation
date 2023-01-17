@@ -19,6 +19,13 @@ char* String::Accessor() {
     return content_;
 }
 
+int String::length() {
+    int i = 0;
+    while (content_[i])
+        i++;
+    return i;
+}
+
 String::~String()
 {
     delete content_;
