@@ -5,15 +5,19 @@
 #include "String.h"
 #include <iostream>
 
-String::String() {
-    content_ = "Hello World";
+String::String()
+{
+    char cont[] = "Hello World";
+    content_ = cont;
 }
 
-char *String::Accessor(const String& str) {
+char *String::Accessor(const String &str)
+{
     return str.content_;
 }
 
-String::~String() {
+String::~String()
+{
     delete content_;
     std::cout << "yo" << std::endl;
 }
