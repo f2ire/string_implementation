@@ -9,9 +9,12 @@
 class String {
 public:
     String();
+    String(char* cstr);
     ~String();
     char* Accessor();
     int length();
+    int max_size();
+    //String resize(int n, char c);
 
 private:
     char* content_ = nullptr;

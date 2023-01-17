@@ -14,5 +14,5 @@ int main() {
     std::cout << "---" << std::endl;
     test_destructor();
     std::cout << "______________________________________" << std::endl;*/
-    test_lenght();
+    test_length();
 }
