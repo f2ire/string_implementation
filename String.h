@@ -11,6 +11,7 @@ public:
     String();
     ~String();
     String(const String& other); //copy constructor
+    const char* c_str() const; //c_string
     char* Accessor();
     int length();
 

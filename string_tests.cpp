@@ -38,3 +38,9 @@ void test_copy_constr() {
     std::cout << cont2 << std::endl;
     delete str;
 }
+
+void test_c_sting() {
+    String str;
+    const char* cont = str.c_str();
+    std::cout << "Content : " << cont << std::endl;
+}
