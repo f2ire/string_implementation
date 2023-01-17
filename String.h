@@ -9,11 +9,11 @@
 class String {
 public:
     String();
-
-    static const char* Accessor(String str);
+    //~String();
+    char* Accessor();
 
 private:
-    const char* content_;
+    char* content_;
 };
 
 

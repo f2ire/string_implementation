@@ -3,11 +3,17 @@
 //
 
 #include "String.h"
+#include <iostream>
 
 String::String() {
     content_ = "Hello World";
 }
 
-const char *String::Accessor(String str) {
+char *String::Accessor(const String& str) {
     return str.content_;
+}
+
+String::~String() {
+    delete content_;
+    std::cout << "yo" << std::endl;
 }
