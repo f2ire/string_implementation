@@ -8,6 +8,13 @@
 
 void test_default_constr() {
     String str = String();
-    const char* cont = String::Accessor(str);
+    char* cont = str.Accessor();
     std::cout << cont << std::endl;
 }
+/*
+void test_destructor() {
+    String *str1 = nullptr;
+    delete str1;
+    String str2 = String();
+    delete str2;
+}*/

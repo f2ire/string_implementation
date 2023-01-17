@@ -8,3 +8,4 @@
 #endif //STRING_PROJECT_STRING_TESTS_H
 
 void test_default_constr();
+void test_destructor();
