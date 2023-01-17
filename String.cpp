@@ -25,10 +25,6 @@ String::String()
 }
 
 
-String::String(const String& other) {  //copy constructor
-    content_ = other.content_;
-}
-
 
 const char* String::Accessor() const{
     return content_;
@@ -48,6 +44,10 @@ String::~String()
     std::cout << "A string has been deleted" << std::endl; //TODO: To delete
 }
 
+
+String::String(const String& other) {
+    content_ = other.content_;
+}
 
 int String::capacity() const{
     return capacity_;
@@ -106,3 +106,29 @@ String operator+(const String& str1, const String& str2) {
     new_str.length_ = i+j;
     return new_str;
 }
+
+// c_string
+
+const char* String::c_str() const {
+    return content_;
+}
+
+// size
+int String::size() {
+    int i = 0;
+    while (content_[i])
+        i++;
+    return i;
+}
+
+// clear
+
+void String::clear(){
+  delete[] content_;
+  content_ = new char[1];
+  content_[0] = '\0';
+  length_ = 0;
+
+}
+
+

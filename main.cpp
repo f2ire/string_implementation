@@ -1,7 +1,8 @@
 #include <iostream>
 #include "string_tests.h"
 
-int main() { //TODO: only print what is working
+int main() {
+    /*
     std::cout << "______________________________________" << std::endl;
     std::cout << "Test of default constructor : " << std::endl;
     std::cout << "If print \"Hello World\" and then the string is deleted, that mean it work as wanted" << std::endl;
@@ -41,8 +42,6 @@ int main() { //TODO: only print what is working
     std::cout << "If print \"Content : Hello World\" and then the string is deleted, that mean it work as wanted" << std::endl;
     std::cout << "---" << std::endl;
     test_c_sting();
-    std::cout << "______________________________________" << std::endl;
-     */
     std::cout << "______________________________________" << std::endl;
     std::cout << "Test of the assignment operator with char*: " << std::endl;
     std::cout << "If print \"Hello World\" and then the string is deleted two times, that mean it work as wanted" << std::endl;

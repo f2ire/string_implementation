@@ -16,5 +16,6 @@ void test_copy_constr();
 void test_c_sting();
 void test_operator_eq_c();
 void test_operator_plus_c();
-
+void test_size();
 #endif //STRING_PROJECT_STRING_TESTS_H
+

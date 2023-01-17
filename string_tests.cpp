@@ -85,3 +85,12 @@ void test_operator_plus_c() {
     String str3 = str1 + str2;
     std::cout << str3.Accessor() << std::endl;
 }
+
+void test_size() {
+    String str = String();
+    std::cout << str.size() << std::endl;
+}
+
+void test_clear() {
+
+}
