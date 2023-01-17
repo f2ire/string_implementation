@@ -11,7 +11,8 @@ String::String()
     const char* txt_to_copy = "Hello World";
     for (int i = 0; i < 12; i++) {
         txt[i] = txt_to_copy[i];
-    };
+    }
+    length_ = 11;
     content_ = txt;
 }
 
@@ -23,6 +24,7 @@ int String::length() {
     int i = 0;
     while (content_[i])
         i++;
+    length_ = i;
     return i;
 }
 
@@ -30,4 +32,9 @@ String::~String()
 {
     delete content_;
     std::cout << "A string has been deleted" << std::endl;
+}
+
+int String::capacity() const {
+    int size_elem = sizeof(char);
+    return size_elem*length_;
 }

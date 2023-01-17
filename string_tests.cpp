@@ -24,7 +24,14 @@ void test_destructor() {
     auto str4 = String();
 }
 
-void test_lenght() {
+void test_length() {
     String str = String();
     std::cout << str.length() << std::endl;
+}
+
+void test_capacity(){
+    String str = String();
+    int size_str = str.capacity();
+    std::cout << size_str << std::endl;
+    std::cout << sizeof(char) << "*" << str.length() << std::endl;
 }
