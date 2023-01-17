@@ -7,17 +7,20 @@
 
 String::String()
 {
-    char cont[] = "Hello World";
-    content_ = cont;
+    char* txt = new char[12];
+    const char* txt_to_copy = "Hello World";
+    for (int i = 0; i < 12; i++) {
+        txt[i] = txt_to_copy[i];
+    };
+    content_ = txt;
 }
 
-char *String::Accessor(const String &str)
-{
-    return str.content_;
+char* String::Accessor() {
+    return content_;
 }
 
 String::~String()
 {
     delete content_;
-    std::cout << "yo" << std::endl;
+    std::cout << "A string has been deleted" << std::endl;
 }

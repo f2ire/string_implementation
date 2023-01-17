@@ -11,10 +11,15 @@ void test_default_constr() {
     char* cont = str.Accessor();
     std::cout << cont << std::endl;
 }
-/*
 void test_destructor() {
     String *str1 = nullptr;
-    delete str1;
-    String str2 = String();
+    auto* str2 = new String();
     delete str2;
-}*/
+    {
+        auto *str3 = new String();
+    // Even here, we have to delete it, it doesn't be deleted if out of scope
+        str1 = str3;
+    }
+    delete str1;
+    auto str4 = String();
+}

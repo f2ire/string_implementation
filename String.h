@@ -9,11 +9,11 @@
 class String {
 public:
     String();
-    //~String();
+    ~String();
     char* Accessor();
 
 private:
-    char* content_;
+    char* content_ = nullptr;
 };
 
 
