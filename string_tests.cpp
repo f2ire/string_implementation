@@ -92,5 +92,8 @@ void test_size() {
 }
 
 void test_clear() {
-
+    String str;
+    std::cout << "Size before clear: " << str.size() << std::endl;
+    str.clear();
+    std::cout << "Size after clear: " << str.size() << std::endl;
 }
