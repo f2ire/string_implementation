@@ -9,7 +9,11 @@
 
 void test_default_constr();
 void test_destructor();
+
 void test_length();
 void test_capacity();
 void test_empty();
 void test_reserve();
+void test_copy_constr();
+void test_c_sting();
+

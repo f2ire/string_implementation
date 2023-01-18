@@ -24,6 +24,12 @@ String::String()
      */
 }
 
+
+String::String(const String& other) {  //copy constructor
+    content_ = other.content_;
+}
+
+
 char* String::Accessor() {
     return content_;
 }
@@ -41,6 +47,7 @@ String::~String()
     delete content_;
     std::cout << "A string has been deleted" << std::endl;
 }
+
 
 int String::capacity(){
     int size_elem = sizeof(char);
@@ -71,3 +78,6 @@ void String::reserve(int n = 0) { //TODO: To modifie because content is not upda
         capacity_ = n;
     }
 }
+
+
+

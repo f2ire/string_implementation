@@ -12,6 +12,7 @@ int main() {
     std::cout << "If there is 3 string deleted; that mean it work as wanted. No leak of memory." << std::endl;
     std::cout << "---" << std::endl;
     test_destructor();
+
     std::cout << "______________________________________" << std::endl;
     test_length();
     std::cout << "______________________________________" << std::endl;
@@ -29,5 +30,15 @@ int main() {
     std::cout << "If the two sentences corresponds, it mean it work as wanted" << std::endl;
     std::cout << "---" << std::endl;
     test_reserve();
+    std::cout << "______________________________________" << std::endl;
+    std::cout << "Test of the copy constructor : " << std::endl;
+    std::cout << "If print \"Hello World\" and then the string is deleted two times, that mean it work as wanted" << std::endl;
+    std::cout << "---" << std::endl;
+    test_copy_constr();
+    std::cout << "______________________________________" << std::endl;
+    std::cout << "Test of the c_string : " << std::endl;
+    std::cout << "If print \"Content : Hello World\" and then the string is deleted, that mean it work as wanted" << std::endl;
+    std::cout << "---" << std::endl;
+    test_c_sting();
     std::cout << "______________________________________" << std::endl;
 }

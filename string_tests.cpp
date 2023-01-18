@@ -52,4 +52,20 @@ void test_reserve(){
     std::cout << "Capacity of " <<str.capacity() << " bytes" << std::endl;
     str.reserve(50);
     std::cout << "Capacity of " << str.capacity() << " bytes, after reserved 50 bytes" << std::endl;
+
+void test_copy_constr() {
+    String* str = new String();
+    String* str2 = new String(*str);
+    char* cont = str->Accessor();
+    char* cont2 = str2->Accessor();
+    std::cout << cont << std::endl;
+    std::cout << cont2 << std::endl;
+    delete str;
+}
+
+void test_c_sting() {
+    String str;
+    const char* cont = str.c_str();
+    std::cout << "Content : " << cont << std::endl;
+
 }
