@@ -79,5 +79,18 @@ void String::reserve(int n = 0) { //TODO: To modifie because content is not upda
     }
 }
 
+String& String::operator=(const char* new_str) {
+
+    int c = 0;
+    while (new_str[c])
+        c++;
+    delete content_;
+    content_ = new char[c + 1];
+    for (int i = 0; i < c; i++) {
+        content_[i] = new_str[i];
+    }
+    std::cout << content_ << " nv content vs ancien : " << new_str << std::endl;
+}
+
 
 

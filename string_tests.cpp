@@ -69,3 +69,8 @@ void test_c_sting() {
     const char* cont = str.c_str();
     std::cout << "Content : " << cont << std::endl;
 }
+
+void test_operator_eq_c() {
+    auto* str = new String();
+    char* new_str = "Salut";
+}

@@ -16,4 +16,5 @@ void test_empty();
 void test_reserve();
 void test_copy_constr();
 void test_c_sting();
+void test_operator_eq_c();
 

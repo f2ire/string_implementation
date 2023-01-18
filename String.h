@@ -17,6 +17,7 @@ public:
     int capacity();
     bool empty();
     void reserve(int n);
+    String& operator=(const char*);
 
 private:
     char* content_ = nullptr;
