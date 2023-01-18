@@ -24,10 +24,34 @@ void test_destructor() {
     auto str4 = String();
 }
 
-void test_lenght() {
+void test_length() {
     String str = String();
     std::cout << str.length() << std::endl;
 }
+
+void test_capacity(){
+    String str = String();
+    int size_str = str.capacity();
+    std::cout << size_str << std::endl;
+    std::cout << sizeof(char) << "*" << str.length() << std::endl;
+}
+
+void test_empty(){
+    String str = String();
+    if (str.length() == 0) {
+        std::cout << "Length of string is 0, then it should be empty" << std::endl;
+    }
+    else {
+        std::cout << "Length of string is not null, then it should don't be empty" << std::endl;
+    }
+    std::cout << (str.empty() ? "Is empty" : "Is not empty") << std::endl;
+}
+
+void test_reserve(){
+    String str = String();
+    std::cout << "Capacity of " <<str.capacity() << " bytes" << std::endl;
+    str.reserve(50);
+    std::cout << "Capacity of " << str.capacity() << " bytes, after reserved 50 bytes" << std::endl;
 
 void test_copy_constr() {
     String* str = new String();
@@ -43,4 +67,5 @@ void test_c_sting() {
     String str;
     const char* cont = str.c_str();
     std::cout << "Content : " << cont << std::endl;
+
 }

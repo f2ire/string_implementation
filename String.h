@@ -14,10 +14,15 @@ public:
     const char* c_str() const; //c_string
     char* Accessor();
     int length();
+    int capacity();
+    bool empty();
+    void reserve(int n);
 
 private:
     char* content_ = nullptr;
     int length_ = 0;
+    int capacity_ = 0;
+    int max_ = 100;
 };
 
 
