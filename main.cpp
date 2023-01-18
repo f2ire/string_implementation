@@ -53,4 +53,7 @@ int main() {
     std::cout << "---" << std::endl;
     test_operator_plus_c();
     std::cout << "______________________________________" << std::endl;
+    test_size();
+    std::cout << "______________________________________" << std::endl;
+    test_assignment_operator();
 }

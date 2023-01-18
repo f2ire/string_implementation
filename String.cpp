@@ -132,3 +132,13 @@ void String::clear(){
 }
 
 
+//operator=(char) 
+
+String& String::operator=(char c) {
+    delete[] content_;
+    content_ = new char[2];
+    content_[0] = c;
+    content_[1] = '\0';
+    length_ = 1;
+    return *this;
+}

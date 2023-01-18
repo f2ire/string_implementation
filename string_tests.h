@@ -18,5 +18,6 @@ void test_operator_eq_c();
 void test_operator_plus_c();
 void test_size();
 void test_clear();
+void test_assignment_operator();
 
 #endif //STRING_PROJECT_STRING_TESTS_H

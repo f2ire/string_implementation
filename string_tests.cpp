@@ -93,7 +93,15 @@ void test_size() {
 
 void test_clear() {
     String str;
-    std::cout << "Size before clear: " << str.size() << std::endl;
+    std::cout << "Taille avant clear: " << str.size() << std::endl;
     str.clear();
-    std::cout << "Size after clear: " << str.size() << std::endl;
+    std::cout << "Taille apres clear: " << str.size() << std::endl;
+}
+
+void test_assignment_operator() {
+    String str;
+    str = 'A';
+
+    std::cout << "Contenu: " << str.c_str() << std::endl;
+    std::cout << "Taille: " << str.size() << std::endl;
 }

@@ -21,6 +21,7 @@ public:
     friend String operator+(const String& str1, const String& str2); //implicit meaning operator+ is not member, and static don't work bc of operator
     int size(); //size
     void clear();
+    String& operator=(char c); //operator=(char c)
 
 
 private:
