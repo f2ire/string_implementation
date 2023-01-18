@@ -47,11 +47,12 @@ void test_empty(){
     std::cout << (str.empty() ? "Is empty" : "Is not empty") << std::endl;
 }
 
-void test_reserve(){
+void test_reserve() {
     String str = String();
-    std::cout << "Capacity of " <<str.capacity() << " bytes" << std::endl;
+    std::cout << "Capacity of " << str.capacity() << " bytes" << std::endl;
     str.reserve(50);
     std::cout << "Capacity of " << str.capacity() << " bytes, after reserved 50 bytes" << std::endl;
+}
 
 void test_copy_constr() {
     String* str = new String();
@@ -67,5 +68,4 @@ void test_c_sting() {
     String str;
     const char* cont = str.c_str();
     std::cout << "Content : " << cont << std::endl;
-
 }
