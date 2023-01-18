@@ -142,3 +142,40 @@ String& String::operator=(char c) {
     length_ = 1;
     return *this;
 }
+
+
+//constructeur copie qui prend en entrée un pointeur de caractère
+String::String(const char* c) {
+    int len = 0;
+    for (int i = 0; c[i] != '\0'; i++)
+        len++;
+    content_ = new char[len + 1];
+    for (int i = 0; i < len; i++)
+        content_[i] = c[i];
+    content_[len] = '\0';
+    length_ = len;
+}
+
+
+//operator+(const string&, const char*)
+
+
+String String::operator+(const char* rhs) {
+    //calcul de la longueur de la chaine rhs
+    int len_rhs = 0;
+    for (int i = 0; rhs[i] != '\0'; i++)
+        len_rhs++;
+    //allocation de la nouvelle chaine
+    char* newContent = new char[length_ + len_rhs + 1];
+    //copie de content_
+    int i;
+    for (i = 0; content_[i] != '\0'; i++)
+        newContent[i] = content_[i];
+    //concatenation de rhs
+    for (int j = 0; rhs[j] != '\0'; j++)
+        newContent[i + j] = rhs[j];
+    newContent[length_ + len_rhs] = '\0';
+    String newString = String(newContent);
+    delete[] newContent;
+    return newString;
+}

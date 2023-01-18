@@ -22,6 +22,9 @@ public:
     int size(); //size
     void clear();
     String& operator=(char c); //operator=(char c)
+    String operator+(const char* rhs);//operator+(const string&, const char*)
+    String(const char* c);// constructeur copie qui prend en entrée un pointeur de caractère
+
 
 
 private:
