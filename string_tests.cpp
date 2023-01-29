@@ -49,9 +49,9 @@ void test_empty(){
 
 void test_reserve() {
     String str = String();
-    std::cout << "Capacity of " << str.capacity() << " bytes" << std::endl;
+    std::cout << "Capacity of " << str.capacity() << " bytes, for " << str.Accessor() << std::endl;
     str.reserve(50);
-    std::cout << "Capacity of " << str.capacity() << " bytes, after reserved 50 bytes" << std::endl;
+    std::cout << "Capacity of " << str.capacity() << " bytes, after reserved 50 bytes for " << str.Accessor() << std::endl;
 }
 
 void test_copy_constr() {
@@ -64,13 +64,17 @@ void test_copy_constr() {
     delete str;
 }
 
+/*
 void test_c_sting() {
     String str;
     const char* cont = str.c_str();
     std::cout << "Content : " << cont << std::endl;
 }
+*/
 
 void test_operator_eq_c() {
-    auto* str = new String();
-    char* new_str = "Salut";
+    String str = String();
+    const char* cont = "Hello World";
+    str = cont;
+    std::cout << str.Accessor() << std::endl;
 }

@@ -65,32 +65,31 @@ bool String::empty() {
 }
 
 void String::reserve(int n = 0) { //TODO: To modifie because content is not updated
-    if (n < capacity_ or n > max_) {
-        std::cout << "Capacity asked for too small compare to the capacity of the string" << std::endl;
-    }
-    else {
-        char* new_content[n];
-        for (int i=0; i > length_; i++){
-            new_content[i] = &content_[i];
+        if (n < capacity_ or n > max_) {
+            std::cout << "Capacity asked for too small compare to the capacity of the string" << std::endl;
         }
-        delete content_;
-        content_ = *new_content;
-        capacity_ = n;
-    }
+        else {
+            char* new_content[n];
+            for (int i=0; i < length_; i++){
+                new_content[i] = &content_[i];
+            }
+            delete content_;
+            content_ = *new_content;
+            capacity_ = n;
+        }
 }
 
 String& String::operator=(const char* new_str) {
 
-    int c = 0;
-    while (new_str[c])
-        c++;
+    int i = 0;
+    while (new_str[i])
+        i++;
+    length_ = i;
+    capacity_ = i;
     delete content_;
-    content_ = new char[c + 1];
-    for (int i = 0; i < c; i++) {
-        content_[i] = new_str[i];
+    content_ = new char[i];
+    for (int j = 0; j <= i; j++) {
+        content_[j] = new_str[j];
     }
-    std::cout << content_ << " nv content vs ancien : " << new_str << std::endl;
+    return *this;
 }
-
-
-
