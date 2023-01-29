@@ -8,7 +8,7 @@
 
 void test_default_constr() {
     String str = String();
-    char* cont = str.Accessor();
+    const char* cont = str.Accessor();
     std::cout << cont << std::endl;
 }
 void test_destructor() {
@@ -49,23 +49,39 @@ void test_empty(){
 
 void test_reserve() {
     String str = String();
-    std::cout << "Capacity of " << str.capacity() << " bytes" << std::endl;
+    std::cout << "Capacity of " << str.capacity() << " bytes, for " << str.Accessor() << std::endl;
     str.reserve(50);
-    std::cout << "Capacity of " << str.capacity() << " bytes, after reserved 50 bytes" << std::endl;
+    std::cout << "Capacity of " << str.capacity() << " bytes, after reserved 50 bytes for " << str.Accessor() << std::endl;
 }
 
 void test_copy_constr() {
     String* str = new String();
     String* str2 = new String(*str);
-    char* cont = str->Accessor();
-    char* cont2 = str2->Accessor();
+    const char* cont = str->Accessor();
+    const char* cont2 = str2->Accessor();
     std::cout << cont << std::endl;
     std::cout << cont2 << std::endl;
     delete str;
 }
 
+/*
 void test_c_sting() {
     String str;
     const char* cont = str.c_str();
     std::cout << "Content : " << cont << std::endl;
+}
+*/
+
+void test_operator_eq_c() {
+    String str = String();
+    const char* cont = "Hello World";
+    str = cont;
+    std::cout << str.Accessor() << std::endl;
+}
+
+void test_operator_plus_c() {
+    const auto str1 = String();
+    const auto str2 = String();
+    String str3 = str1 + str2;
+    std::cout << str3.Accessor() << std::endl;
 }

@@ -12,11 +12,13 @@ public:
     ~String();
     String(const String& other); //copy constructor
     const char* c_str() const; //c_string
-    char* Accessor();
+    const char* Accessor() const;
     int length();
-    int capacity();
-    bool empty();
+    int capacity() const;
+    bool empty() const;
     void reserve(int n);
+    String& operator=(const char*);
+    friend String operator+(const String& str1, const String& str2); //implicit meaning operator+ is not member, and static don't work bc of operator
 
 private:
     char* content_ = nullptr;
@@ -25,6 +27,7 @@ private:
     int max_ = 100;
 };
 
+String operator+(const String& str1, const String& str2); //friend dont declare
 
 
 #endif //STRING_PROJECT_STRING_H
