@@ -30,7 +30,7 @@ String::String(const String& other) {  //copy constructor
 }
 
 
-char* String::Accessor() {
+const char* String::Accessor() {
     return content_;
 }
 
@@ -92,4 +92,28 @@ String& String::operator=(const char* new_str) {
         content_[j] = new_str[j];
     }
     return *this;
+}
+
+String& operator+(const String& str1, const String& str2) {
+    int i = 0;
+    while (str1.Accessor()[i])
+        i++;
+    int j = 0;
+    while (str2.Accessor()[i])
+        j++;
+    int k = 0;
+    char* new_content = new char[i+j];
+    while (k < i) {
+        new_content[k] = str1.Accessor()[k];
+        k++;
+    }
+    while (k < i+j) {
+        new_content[k] = str2.Accessor()[k-i];
+        k++;
+    }
+    auto* new_str = new String();
+    new_str->content_ = new_content;
+    new_str->length_ = i+j;
+    new_str->capacity_ = i+j;
+    return *new_str;
 }

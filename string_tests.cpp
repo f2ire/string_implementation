@@ -78,3 +78,10 @@ void test_operator_eq_c() {
     str = cont;
     std::cout << str.Accessor() << std::endl;
 }
+
+void test_operator_plus() {
+    const auto str1 = String();
+    const auto str2 = String();
+    String str3 = str1 + str2;
+    std::cout << str3.Accessor() << std::endl;
+}

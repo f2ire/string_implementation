@@ -12,12 +12,13 @@ public:
     ~String();
     String(const String& other); //copy constructor
     const char* c_str() const; //c_string
-    char* Accessor();
+    const char* Accessor();
     int length();
     int capacity();
     bool empty();
     void reserve(int n);
     String& operator=(const char*);
+    String& operator+(const String& str1, const String& str2);
 
 private:
     char* content_ = nullptr;
