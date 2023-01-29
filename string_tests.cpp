@@ -8,7 +8,7 @@
 
 void test_default_constr() {
     String str = String();
-    char* cont = str.Accessor();
+    const char* cont = str.Accessor();
     std::cout << cont << std::endl;
 }
 void test_destructor() {
@@ -57,8 +57,8 @@ void test_reserve() {
 void test_copy_constr() {
     String* str = new String();
     String* str2 = new String(*str);
-    char* cont = str->Accessor();
-    char* cont2 = str2->Accessor();
+    const char* cont = str->Accessor();
+    const char* cont2 = str2->Accessor();
     std::cout << cont << std::endl;
     std::cout << cont2 << std::endl;
     delete str;
@@ -79,7 +79,7 @@ void test_operator_eq_c() {
     std::cout << str.Accessor() << std::endl;
 }
 
-void test_operator_plus() {
+void test_operator_plus_c() {
     const auto str1 = String();
     const auto str2 = String();
     String str3 = str1 + str2;

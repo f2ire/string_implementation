@@ -9,7 +9,7 @@ String::String()
 {
     char* txt = new char[12];
     const char* txt_to_copy = "Hello World";
-    for (int i = 0; i < 12; i++) {
+    for (int i = 0; i <= 11; i++) {
         txt[i] = txt_to_copy[i];
     }
     length_ = 11;
@@ -30,7 +30,7 @@ String::String(const String& other) {  //copy constructor
 }
 
 
-const char* String::Accessor() {
+const char* String::Accessor() const{
     return content_;
 }
 
@@ -45,36 +45,29 @@ int String::length() {
 String::~String()
 {
     delete content_;
-    std::cout << "A string has been deleted" << std::endl;
+    std::cout << "A string has been deleted" << std::endl; //TODO: To delete
 }
 
 
-int String::capacity(){
-    int size_elem = sizeof(char);
-    capacity_ = size_elem*length_;
+int String::capacity() const{
     return capacity_;
 }
 
-bool String::empty() {
-    if (length_ == 0) {
-        return true;
-    }
-    else {
-        return false;
-    }
+bool String::empty() const{
+    return length_ == 0;
 }
 
-void String::reserve(int n = 0) { //TODO: To modifie because content is not updated
+void String::reserve(int n = 0) {
         if (n < capacity_ or n > max_) {
             std::cout << "Capacity asked for too small compare to the capacity of the string" << std::endl;
         }
         else {
-            char* new_content[n];
-            for (int i=0; i < length_; i++){
-                new_content[i] = &content_[i];
+            char* new_content = new char[n+1];
+            for (int i=0; i <= length_; i++){
+                new_content[i] = content_[i];
             }
             delete content_;
-            content_ = *new_content;
+            content_ = new_content;
             capacity_ = n;
         }
 }
@@ -87,33 +80,29 @@ String& String::operator=(const char* new_str) {
     length_ = i;
     capacity_ = i;
     delete content_;
-    content_ = new char[i];
+    content_ = new char[i+1];
     for (int j = 0; j <= i; j++) {
         content_[j] = new_str[j];
     }
     return *this;
 }
 
-String& operator+(const String& str1, const String& str2) {
-    int i = 0;
-    while (str1.Accessor()[i])
-        i++;
-    int j = 0;
-    while (str2.Accessor()[i])
-        j++;
+String operator+(const String& str1, const String& str2) {
+    int i = str1.length_;
+    int j = str2.length_;
     int k = 0;
-    char* new_content = new char[i+j];
-    while (k < i) {
-        new_content[k] = str1.Accessor()[k];
-        k++;
-    }
+    auto new_str = String();
+    new_str.reserve(i+j);
+
     while (k < i+j) {
-        new_content[k] = str2.Accessor()[k-i];
+        if (k < i) {
+            new_str.content_[k] = str1.content_[k];
+        } else {
+            new_str.content_[k] = str2.content_[k-i];
+        }
         k++;
     }
-    auto* new_str = new String();
-    new_str->content_ = new_content;
-    new_str->length_ = i+j;
-    new_str->capacity_ = i+j;
-    return *new_str;
+    new_str.content_[k] = '\0';
+    new_str.length_ = i+j;
+    return new_str;
 }
