@@ -24,19 +24,44 @@ String::String()
      */
 }
 
-
+String::String(char* cstr) {
+    int i=0;
+    while (cstr[i]!='/0') {
+        i++;
+    }
+    char* txt = new char[i+1];
+    for (int a = 0; a < i; a++) {
+        txt[a] = cstr[a];
+    };
+    content_=txt;
+    length_=i;
+    //capacity_=i;
+}
 
 const char* String::Accessor() const{
     return content_;
 }
 
-int String::length() {
+int String::length() { //TODO: check if it counts all elements even if str stops before length
     int i = 0;
     while (content_[i])
         i++;
-    length_ = i;
+    length_=i;
     return i;
 }
+
+
+int String::max_size() {
+    return 100;
+}
+
+/*
+String String::resize(int n, char c) {
+    int len=length_
+    for (int a=0; a<len; a++) {
+
+    };
+}*/
 
 String::~String()
 {
@@ -132,7 +157,7 @@ void String::clear(){
 }
 
 
-//operator=(char) 
+//operator=(char)
 
 String& String::operator=(char c) {
     delete[] content_;

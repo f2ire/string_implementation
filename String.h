@@ -9,11 +9,14 @@
 class String {
 public:
     String();
+    String(char* cstr);
     ~String();
     String(const String& other); //copy constructor
     const char* c_str() const; //c_string
     const char* Accessor() const;
     int length();
+    int max_size();
+    //String resize(int n, char c);
     int capacity() const;
     bool empty() const;
     void reserve(int n);

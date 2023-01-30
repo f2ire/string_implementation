@@ -75,4 +75,6 @@ int main() {
 
     test_assignment_operator();
 
+    std::cout << "______________________________________" << std::endl;*/
+    test_length();
 }
