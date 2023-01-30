@@ -8,22 +8,40 @@
 
 class String {
 public:
+    //Constructors
     String();
-    ~String();
-    String(const String& other); //copy constructor
-    const char* c_str() const; //c_string
-    const char* Accessor() const;
-    int length();
-    int capacity() const;
-    bool empty() const;
-    void reserve(int n);
-    String& operator=(const char*);
-    friend String operator+(const String& str1, const String& str2); //implicit meaning operator+ is not member, and static don't work bc of operator
-    int size(); //size
-    void clear();
-    String& operator=(char c); //operator=(char c)
-    String operator+(const char* rhs);//operator+(const string&, const char*)
-    String(const char* c);// constructeur copie qui prend en entrée un pointeur de caractère
+    String(const String& other); //A: copy constructor
+    String(const char* c); //B
+
+    //Destructor
+    ~String(); //C: destructor
+
+    //Accessors
+    const char* c_str() const; //A
+
+    //Capacity
+    void clear(); //A
+    int size(); //A
+    int length(); //B
+    int max_size() const; //B
+    int capacity() const; //C
+    bool empty() const; //C
+    void reserve(int n); //C
+
+
+    //Operations
+    //TODO: void resize(int n, char); //B
+
+    //Member functions
+    String& operator=(char c); //A
+    //TODO: operator=(const String&); //B
+    String& operator=(const char*); //C
+
+    //Non-member functions
+    String operator+(const char* rhs);//A TODO: To change : shouuld be operator+(const string&, const char*)
+    //TODO: String operator+(const String&, char); //B
+    friend String operator+(const String& str1, const String& str2); //C
+    // implicit meaning operator+ is not member, and static don't work bc of operator
 
 
 

@@ -26,26 +26,29 @@ You shall write your tests in a file named string_tests.cpp. Each test will be h
 Implement those functions that fall to you:
 
 Student A:
-copy constructor
-c_str()
-size()
-clear()
-operator=(char)
-operator+(const string&, const char*)
-Student B:
-constructor from a c-string
-length()
-max_size()
-resize(size_t, char)
-operator=(const string&)
-operator+(const string&, char)
-Student C:
-destructor
-capacity()
-empty()
-reserve(size_t)
-operator=(const char*)
-operator+(const string&, const string&)
+copy constructor  //constructor --> DONE
+c_str()  //element access --> DONE
+size()  //capacity --> DONE
+clear()  //Operations --> DONE
+operator=(char) //Member functions --> DONE
+operator+(const string&, const char*) //Non-member functions --> TODO 
+Student B: 
+constructor from a c-string //constructor   --> DONE
+length() //capacity  --> DONE   
+max_size() //capacity --> DONE
+resize(size_t, char) //operations  --> TODO
+operator=(const string&) //Member functions --> TODO
+operator+(const string&, char) //Non-member functions  --> TODO
+Student C:                  --> DONE
+destructor //destructor  --> DONE
+capacity() //capacity  --> DONE
+empty() //capacity  --> DONE
+reserve(size_t) //capacity --> DONE
+operator=(const char*) //Member functions --> DONE
+operator+(const string&, const string&) //Non-member functions --> DONE
+
+
+
 Hand-in
 Make a bare clone of your gitlab repository named group<group_number>.git (e.g. group1.git): git clone --bare <url> group<group_number>.git).
 Create an archive string_group<group_number>.tgz (e.g. string_group1.tgz) containing the bare clone, upload it to https://filesender.renater.fr/ and send us the link (david.parsons@inria.fr and sebastien.valette@creatis.insa-lyon.fr).

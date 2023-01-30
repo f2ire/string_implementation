@@ -5,6 +5,7 @@
 #include "String.h"
 #include <iostream>
 
+//Constructors
 String::String()
 {
     char* txt = new char[12];
@@ -13,6 +14,7 @@ String::String()
         txt[i] = txt_to_copy[i];
     }
     length_ = 11;
+    size_ = 11;
     content_ = txt;
     capacity_ = 11;
     /*
@@ -24,20 +26,30 @@ String::String()
      */
 }
 
-
-
-const char* String::Accessor() const{
-    return content_;
+String::String(const String& other) {
+    content_ = new char[other.length_+1];
+    for (int i=0; i <= other.length_; i++) {
+        content_[i] = other.content_[i];
+    }
+    size_ = other.size_;
+    length_ = other.length_;
+    capacity_ = other.capacity_;
 }
 
-int String::length() {
-    int i = 0;
-    while (content_[i])
-        i++;
-    length_ = i;
-    return i;
+String::String(const char* c) {
+    int len = 0;
+    for (int i = 0; c[i] != '\0'; i++)
+        len++;
+    content_ = new char[len + 1];
+    for (int i = 0; i < len; i++)
+        content_[i] = c[i];
+    content_[len] = '\0';
+    length_ = len;
+    size_ = len;
+    capacity_ = len;
 }
 
+//destructors
 String::~String()
 {
     delete content_;
@@ -45,8 +57,31 @@ String::~String()
 }
 
 
-String::String(const String& other) {
-    content_ = other.content_;
+//Accessors
+const char* String::c_str() const{
+    return content_;
+}
+
+//Capacity
+void String::clear(){
+    delete content_;
+    content_ = new char[1];
+    content_[0] = '\0';
+    length_ = 0;
+    size_ = 0;
+
+}
+
+int String::size() {
+    return size_;
+}
+
+int String::length() {
+    return length_;
+}
+
+int String::max_size() const{
+    return max_;
 }
 
 int String::capacity() const{
@@ -72,12 +107,31 @@ void String::reserve(int n = 0) {
         }
 }
 
+
+//Operations
+//TODO: void resize(int n, char); //B
+
+//Member functions
+
+String& String::operator=(char c) {
+    delete content_;
+    content_ = new char[2];
+    content_[0] = c;
+    content_[1] = '\0';
+    length_ = 1;
+    size_ = 1;
+    return *this;
+}
+
+//TODO: operator=(const String& str); //B
+
 String& String::operator=(const char* new_str) {
 
     int i = 0;
     while (new_str[i])
         i++;
     length_ = i;
+    size_ = i;
     capacity_ = i;
     delete content_;
     content_ = new char[i+1];
@@ -87,78 +141,7 @@ String& String::operator=(const char* new_str) {
     return *this;
 }
 
-String operator+(const String& str1, const String& str2) {
-    int i = str1.length_;
-    int j = str2.length_;
-    int k = 0;
-    auto new_str = String();
-    new_str.reserve(i+j);
-
-    while (k < i+j) {
-        if (k < i) {
-            new_str.content_[k] = str1.content_[k];
-        } else {
-            new_str.content_[k] = str2.content_[k-i];
-        }
-        k++;
-    }
-    new_str.content_[k] = '\0';
-    new_str.length_ = i+j;
-    return new_str;
-}
-
-// c_string
-
-const char* String::c_str() const {
-    return content_;
-}
-
-// size
-int String::size() {
-    int i = 0;
-    while (content_[i])
-        i++;
-    return i;
-}
-
-// clear
-
-void String::clear(){
-  delete[] content_;
-  content_ = new char[1];
-  content_[0] = '\0';
-  length_ = 0;
-
-}
-
-
-//operator=(char) 
-
-String& String::operator=(char c) {
-    delete[] content_;
-    content_ = new char[2];
-    content_[0] = c;
-    content_[1] = '\0';
-    length_ = 1;
-    return *this;
-}
-
-
-//constructeur copie qui prend en entrée un pointeur de caractère
-String::String(const char* c) {
-    int len = 0;
-    for (int i = 0; c[i] != '\0'; i++)
-        len++;
-    content_ = new char[len + 1];
-    for (int i = 0; i < len; i++)
-        content_[i] = c[i];
-    content_[len] = '\0';
-    length_ = len;
-}
-
-
-//operator+(const string&, const char*)
-
+//Non-member functions
 
 String String::operator+(const char* rhs) {
     //calcul de la longueur de la chaine rhs
@@ -178,4 +161,25 @@ String String::operator+(const char* rhs) {
     String newString = String(newContent);
     delete[] newContent;
     return newString;
+} //TODO: A revoir
+
+String operator+(const String& str1, const String& str2) {
+    int i = str1.length_;
+    int j = str2.length_;
+    int k = 0;
+    auto new_str = String();
+    new_str.reserve(i+j);
+
+    while (k < i+j) {
+        if (k < i) {
+            new_str.content_[k] = str1.content_[k];
+        } else {
+            new_str.content_[k] = str2.content_[k-i];
+        }
+        k++;
+    }
+    new_str.content_[k] = '\0';
+    new_str.length_ = i+j;
+    new_str.size_ = i+j;
+    return new_str;
 }
