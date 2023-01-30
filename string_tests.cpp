@@ -82,18 +82,7 @@ void test_reserve() {
 }
 
 //Operations
-void test_resize() {
-    String str = String();
-    std::cout << "Size of " << str.size() << " and content is " << str.c_str() << std::endl;
-    str.resize(49, 'A');
-    std::cout << "Size of " << str.size() <<
-    " after resized for 49 with char \'A\', and content is "
-    << str.c_str() << std::endl;
-    str.resize(30,'B');
-    std::cout << "Size of " << str.size() <<
-              " after resized for 30 with char \'A\', and content is "
-              << str.c_str() << std::endl;
-}
+//TODO: test_resize()
 
 //Member fonctions
 void test_assignment_operator_a() {
@@ -112,12 +101,8 @@ void test_assignment_operator_c() {
     std::cout << str.c_str() << std::endl;
 }
 
-//Non-member functions
-void test_operator_plus_a() {
-    String str1 = String();
-    String str3 = str1 + "2nd Hello World";
-    std::cout << str3.c_str() << std::endl;
-}
+//Non-member fonctions
+//TODO: test operator_plus_a()
 
 //TODO: test operator_plus_b()
 

@@ -79,15 +79,10 @@ int main() {
     std::cout << "______________________________________" << std::endl << std::endl;
 
 
-    //Operations
-    std::cout << "Test of Operations methods: " << std::endl;
+    //Operators
+    std::cout << "Test of operators methods: " << std::endl;
     std::cout << "______________________________________" << std::endl;
-    std::cout << "Test of resize() : " << std::endl;
-    std::cout << "If print a size of 11 and then size of 49 with a new content ended by \"A\" that mean it work as wanted" << std::endl;
-    std::cout << "If the size of the string is then 30, that mean it work as wanted" << std::endl;
-    std::cout << "---" << std::endl;
-    test_resize();
-    std::cout << "______________________________________" << std::endl << std::endl;
+    //TODO: void test_resize();
 
     //Member functions
     std::cout << "Test of member functions: " << std::endl;
@@ -108,12 +103,9 @@ int main() {
     //Non-member functions
 
     std::cout << "Test of non-member functions: " << std::endl;
-    std::cout << "____________________________________" << std::endl;
-    std::cout << "Test of Operator+(const String& str,  const char* chr) : " << std::endl;
-    std::cout << "If print \"Hello world2nd Hello world\", that mean it work as wanted" << std::endl;
-    std::cout << "---" << std::endl;
-    test_operator_plus_a();
-    std::cout << "__________________" << std::endl;
+    std::cout << "______________________________________" << std::endl;
+    //TODO: test_operator_plus_a();
+    std::cout << "____________________" << std::endl;
     //TODO: test_operator_plus_b();
     std::cout << "____________________" << std::endl;
     std::cout << "Test of Operator+(const String& str1, const String& str2) : " << std::endl;

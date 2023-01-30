@@ -21,8 +21,8 @@ public:
 
     //Capacity
     void clear(); //A
-    int size() const; //A
-    int length() const; //B
+    int size(); //A
+    int length(); //B
     int max_size() const; //B
     int capacity() const; //C
     bool empty() const; //C
@@ -30,7 +30,7 @@ public:
 
 
     //Operations
-    void resize(int n, char chr); //B
+    //TODO: void resize(int n, char); //B
 
     //Member functions
     String& operator=(char c); //A
@@ -38,7 +38,7 @@ public:
     String& operator=(const char*); //C
 
     //Non-member functions
-    friend String operator+(const String& str, const char* chr);
+    String operator+(const char* rhs);//A TODO: To change : shouuld be operator+(const string&, const char*)
     //TODO: String operator+(const String&, char); //B
     friend String operator+(const String& str1, const String& str2); //C
     // implicit meaning operator+ is not member, and static don't work bc of operator
@@ -54,6 +54,5 @@ private:
 };
 
 String operator+(const String& str1, const String& str2); //friend dont declare
-String operator+(const String& str, const char* chr); //friend dont declare
 
 #endif //STRING_PROJECT_STRING_H
