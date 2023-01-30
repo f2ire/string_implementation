@@ -11,6 +11,14 @@ void test_default_constr() {
     const char* cont = str.Accessor();
     std::cout << cont << std::endl;
 }
+
+void test_cstr_constr(char* cstr) {
+    String str = String(cstr);
+    char* cont = str.Accessor();
+    std::cout << cont << std::endl;
+    std::cout << str.length() << std::endl;
+}
+
 void test_destructor() {
     String *str1 = nullptr;
     auto* str2 = new String();
