@@ -30,12 +30,12 @@ void test_resize();
 
 //Member functions
 void test_assignment_operator_a();
-//TODO: test_assignment_operator_b();
+void test_assignment_operator_b();
 void test_assignment_operator_c();
 
 //Non-member functions
 void test_operator_plus_a();
-//TODO: test_operator_plus_b();
+void test_operator_plus_b();
 void test_operator_plus_c();
 
 #endif //STRING_PROJECT_STRING_TESTS_H

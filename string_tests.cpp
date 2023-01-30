@@ -103,7 +103,12 @@ void test_assignment_operator_a() {
     std::cout << "Length: " << str.size() << std::endl;
 }
 
-//TODO: test_assignment_operator_b()
+void test_assignment_operator_b() {
+    String str = String();
+    String str2 = String("Hello World2");
+    str = str2;
+    std::cout << str.c_str() << std::endl;
+}
 
 void test_assignment_operator_c() {
     String str = String();
@@ -119,7 +124,11 @@ void test_operator_plus_a() {
     std::cout << str3.c_str() << std::endl;
 }
 
-//TODO: test operator_plus_b()
+void test_operator_plus_b() {
+    String str1 = String();
+    String str3 = str1 + 'A';
+    std::cout << str3.c_str() << std::endl;
+}
 
 void test_operator_plus_c() {
     const auto str1 = String();
@@ -127,8 +136,3 @@ void test_operator_plus_c() {
     String str3 = str1 + str2;
     std::cout << str3.c_str() << std::endl;
 }
-
-
-
-
-

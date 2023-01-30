@@ -34,12 +34,12 @@ public:
 
     //Member functions
     String& operator=(char c); //A
-    //TODO: operator=(const String&); //B
+    String& operator=(const String&); //B
     String& operator=(const char*); //C
 
     //Non-member functions
     friend String operator+(const String& str, const char* chr);
-    //TODO: String operator+(const String&, char); //B
+    friend String operator+(const String&, char); //B
     friend String operator+(const String& str1, const String& str2); //C
     // implicit meaning operator+ is not member, and static don't work bc of operator
 
@@ -54,6 +54,7 @@ private:
 };
 
 String operator+(const String& str1, const String& str2); //friend dont declare
+String operator+(const String&, char);
 String operator+(const String& str, const char* chr); //friend dont declare
 
 #endif //STRING_PROJECT_STRING_H

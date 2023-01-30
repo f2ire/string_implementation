@@ -97,7 +97,10 @@ int main() {
     std::cout << "---" << std::endl;
     test_assignment_operator_a();
     std::cout << "____________________" << std::endl;
-    //TODO: test_assignment_operator_b();
+    std::cout << "Test of Operator=(const String& str) : " << std::endl;
+    std::cout << "If print a content of \"Hello World2\", that mean it work as wanted" << std::endl;
+    std::cout << "---" << std::endl;
+    test_assignment_operator_b();
     std::cout << "____________________" << std::endl;
     std::cout << "Test of Operator=(const char*) : " << std::endl;
     std::cout << "If print \"Hello world\", that mean it work as wanted" << std::endl;
@@ -114,7 +117,10 @@ int main() {
     std::cout << "---" << std::endl;
     test_operator_plus_a();
     std::cout << "__________________" << std::endl;
-    //TODO: test_operator_plus_b();
+    std::cout << "Test of Operator+(const String& str, char c) : " << std::endl;
+    std::cout << "If print \"Hello worldA\", that mean it work as wanted" << std::endl;
+    std::cout << "---" << std::endl;
+    test_operator_plus_b();
     std::cout << "____________________" << std::endl;
     std::cout << "Test of Operator+(const String& str1, const String& str2) : " << std::endl;
     std::cout << "If print \"Hello worldHello world\", that mean it work as wanted" << std::endl;

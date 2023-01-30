@@ -143,7 +143,17 @@ String& String::operator=(char c) {
     return *this;
 }
 
-//TODO: operator=(const String& str); //B
+String& String::operator=(const String& str) {
+    delete content_;
+    content_ = new char[str.length_+1];
+    for (int i = 0; i <= str.length_; i++) {
+        content_[i] = str.content_[i];
+    }
+    length_ = str.length_;
+    size_ = str.size_;
+    capacity_ = str.capacity_;
+    return *this;
+}
 
 String& String::operator=(const char* new_str) {
 
@@ -177,7 +187,16 @@ String operator+(const String& str, const char* chr) {
     return new_str;
 }
 
-//TODO: operator+(const String&,char);
+String operator+(const String& str,char c) {
+    int l = str.length_;
+    auto new_str = String(str);
+    new_str.reserve(l+1);
+    new_str.content_[l] = c;
+    new_str.content_[l+1] = '\0';
+    new_str.length_ += 1;
+    new_str.size_ += 1;
+    return new_str;
+}
 
 String operator+(const String& str1, const String& str2) {
     int i = str1.length_;
