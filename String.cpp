@@ -72,11 +72,11 @@ void String::clear(){
 
 }
 
-int String::size() {
+int String::size() const {
     return size_;
 }
 
-int String::length() {
+int String::length() const {
     return length_;
 }
 
@@ -109,7 +109,27 @@ void String::reserve(int n = 0) {
 
 
 //Operations
-//TODO: void resize(int n, char); //B
+void String::resize(int n, char chr) {
+    if (n < length_) {
+        length_ = n;
+        size_ = n;
+        content_[n] = '\0'; //TODO: Check if it works
+    }
+    else if (n > max_) {
+        std::cout << "The size asked for is too big" << std::endl;
+    }
+    else if (n > length_) {
+        if (n > capacity_) {
+            reserve(n);
+        }
+        for (int i = length_; i < n; i++) {
+            content_[i] = chr;
+        }
+        content_[n] = '\0';
+        length_ = n;
+        size_ = n;
+    }
+}
 
 //Member functions
 
@@ -143,25 +163,21 @@ String& String::operator=(const char* new_str) {
 
 //Non-member functions
 
-String String::operator+(const char* rhs) {
-    //calcul de la longueur de la chaine rhs
-    int len_rhs = 0;
-    for (int i = 0; rhs[i] != '\0'; i++)
-        len_rhs++;
-    //allocation de la nouvelle chaine
-    char* newContent = new char[length_ + len_rhs + 1];
-    //copie de content_
-    int i;
-    for (i = 0; content_[i] != '\0'; i++)
-        newContent[i] = content_[i];
-    //concatenation de rhs
-    for (int j = 0; rhs[j] != '\0'; j++)
-        newContent[i + j] = rhs[j];
-    newContent[length_ + len_rhs] = '\0';
-    String newString = String(newContent);
-    delete[] newContent;
-    return newString;
-} //TODO: A revoir
+String operator+(const String& str, const char* chr) {
+    int len_chr = 0;
+    while (chr[len_chr])
+        len_chr++;
+    auto new_str = String(str);
+    new_str.reserve(str.length_+len_chr);
+    for (int i = 0; i <= len_chr; i++) {
+        new_str.content_[str.length_+i] = chr[i];
+    }
+    new_str.length_ += len_chr;
+    new_str.size_ += len_chr;
+    return new_str;
+}
+
+//TODO: operator+(const String&,char);
 
 String operator+(const String& str1, const String& str2) {
     int i = str1.length_;
