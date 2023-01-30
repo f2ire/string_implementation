@@ -101,7 +101,7 @@ void test_assignment_operator_c() {
     std::cout << str.c_str() << std::endl;
 }
 
-//Non-member fonctions
+//Non-member functions
 void test_operator_plus_a() {
     String str1 = String();
     String str3 = str1 + "2nd Hello World";
