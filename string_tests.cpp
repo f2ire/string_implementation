@@ -85,3 +85,23 @@ void test_operator_plus_c() {
     String str3 = str1 + str2;
     std::cout << str3.Accessor() << std::endl;
 }
+
+void test_size() {
+    String str = String();
+    std::cout << str.size() << std::endl;
+}
+
+void test_clear() {
+    String str;
+    std::cout << "Taille avant clear: " << str.size() << std::endl;
+    str.clear();
+    std::cout << "Taille apres clear: " << str.size() << std::endl;
+}
+
+void test_assignment_operator() {
+    String str;
+    str = 'A';
+
+    std::cout << "Contenu: " << str.c_str() << std::endl;
+    std::cout << "Taille: " << str.size() << std::endl;
+}

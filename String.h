@@ -19,10 +19,18 @@ public:
     void reserve(int n);
     String& operator=(const char*);
     friend String operator+(const String& str1, const String& str2); //implicit meaning operator+ is not member, and static don't work bc of operator
+    int size(); //size
+    void clear();
+    String& operator=(char c); //operator=(char c)
+    String operator+(const char* rhs);//operator+(const string&, const char*)
+    String(const char* c);// constructeur copie qui prend en entrée un pointeur de caractère
+
+
 
 private:
     char* content_ = nullptr;
     int length_ = 0;
+    int size_ = 0;
     int capacity_ = 0;
     int max_ = 100;
 };
