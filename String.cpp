@@ -24,12 +24,6 @@ String::String()
      */
 }
 
-
-
-const char* String::Accessor() const{
-    return content_;
-}
-
 String::String(char* cstr) {
     int i=0;
     while (cstr[i]!='/0') {
@@ -44,11 +38,15 @@ String::String(char* cstr) {
     //capacity_=i;
 }
 
+const char* String::Accessor() const{
+    return content_;
+}
+
 int String::length() { //TODO: check if it counts all elements even if str stops before length
     int i = 0;
     while (content_[i])
         i++;
-    length_ = i;
+    length_=i;
     return i;
 }
 
