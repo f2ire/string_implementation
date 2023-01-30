@@ -18,7 +18,7 @@ String::String()
 
 String::String(const String& other) {
     content_ = new char[other.length_+1];
-    for (int i=0; i <= other.length_; i++) {
+    for (int i=0; i <= other.length_; i++) { //Supp or equal because of '\0'
         content_[i] = other.content_[i];
     }
     size_ = other.size_;
@@ -43,7 +43,7 @@ String::String(const char* c) {
 String::~String()
 {
     delete content_;
-    std::cout << "A string has been deleted" << std::endl; //TODO: To delete
+    // std::cout << "A string has been deleted" << std::endl; //can be used to test destructor
 }
 
 
@@ -103,7 +103,7 @@ void String::resize(int n, char chr) {
     if (n < length_) {
         length_ = n;
         size_ = n;
-        content_[n] = '\0'; //TODO: Check if it works
+        content_[n] = '\0';
     }
     else if (n > max_) {
         std::cout << "The size asked for is too big" << std::endl;
@@ -130,6 +130,7 @@ String& String::operator=(char c) {
     content_[1] = '\0';
     length_ = 1;
     size_ = 1;
+    capacity_ = 1;
     return *this;
 }
 
