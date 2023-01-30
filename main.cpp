@@ -4,7 +4,7 @@
 int main() {
     //Constructors
     std::cout << std::endl << "All test for the String class" << std::endl;
-    std::cout << "True if it work as wanted, else False" << std::endl;
+    std::cout << "--True if it work as wanted, else False--" << std::endl;
     std::cout << "______________________________________" << std::endl;
     std::cout << "Test of constructors methods : " << std::endl;
     std::cout << "______________________________________" << std::endl;
@@ -56,8 +56,6 @@ int main() {
     test_empty();
     std::cout << "____________________" << std::endl;
     std::cout << "Test of reserve() : " << std::endl;
-    std::cout << "If the capacity is 11 and then 50, and then the string is deleted, that mean it work as wanted" << std::endl;
-    std::cout << "---" << std::endl;
     test_reserve();
     std::cout << "______________________________________" << std::endl << std::endl;
 
