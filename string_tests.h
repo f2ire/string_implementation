@@ -26,7 +26,7 @@ void test_empty();
 void test_reserve();
 
 //Operations
-//TODO: void test_resize();
+void test_resize();
 
 //Member functions
 void test_assignment_operator_a();
@@ -34,7 +34,7 @@ void test_assignment_operator_a();
 void test_assignment_operator_c();
 
 //Non-member functions
-//TODO: test_operator_plus_a();
+void test_operator_plus_a();
 //TODO: test_operator_plus_b();
 void test_operator_plus_c();
 
