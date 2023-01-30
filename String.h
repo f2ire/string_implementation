@@ -30,7 +30,7 @@ public:
 
 
     //Operations
-    //TODO: void resize(int n, char); //B
+    // TODO: void resize(int n, char); //B
 
     //Member functions
     String& operator=(char c); //A
@@ -38,7 +38,7 @@ public:
     String& operator=(const char*); //C
 
     //Non-member functions
-    friend String operator+(const String& str, const char* chr);//A TODO: To change : shouuld be operator+(const string&, const char*)
+    friend String operator+(const String& str, const char* chr);
     //TODO: String operator+(const String&, char); //B
     friend String operator+(const String& str1, const String& str2); //C
     // implicit meaning operator+ is not member, and static don't work bc of operator
