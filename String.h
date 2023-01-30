@@ -54,6 +54,6 @@ private:
 };
 
 String operator+(const String& str1, const String& str2); //friend dont declare
-String operator+(const String&, const char* chr); //friend dont declare
+String operator+(const String& str, const char* chr); //friend dont declare
 
 #endif //STRING_PROJECT_STRING_H
