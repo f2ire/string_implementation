@@ -143,25 +143,21 @@ String& String::operator=(const char* new_str) {
 
 //Non-member functions
 
-String String::operator+(const char* rhs) {
-    //calcul de la longueur de la chaine rhs
-    int len_rhs = 0;
-    for (int i = 0; rhs[i] != '\0'; i++)
-        len_rhs++;
-    //allocation de la nouvelle chaine
-    char* newContent = new char[length_ + len_rhs + 1];
-    //copie de content_
-    int i;
-    for (i = 0; content_[i] != '\0'; i++)
-        newContent[i] = content_[i];
-    //concatenation de rhs
-    for (int j = 0; rhs[j] != '\0'; j++)
-        newContent[i + j] = rhs[j];
-    newContent[length_ + len_rhs] = '\0';
-    String newString = String(newContent);
-    delete[] newContent;
-    return newString;
-} //TODO: A revoir
+String operator+(const String& str, const char* chr) {
+    int len_chr = 0;
+    while (chr[len_chr])
+        len_chr++;
+    auto new_str = String(str);
+    new_str.reserve(str.length_+len_chr);
+    for (int i = 0; i <= len_chr; i++) {
+        new_str.content_[str.length_+i] = chr[i];
+    }
+    new_str.length_ += len_chr;
+    new_str.size_ += len_chr;
+    return new_str;
+}
+
+//TODO: operator+(const String&,char);
 
 String operator+(const String& str1, const String& str2) {
     int i = str1.length_;

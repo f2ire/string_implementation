@@ -34,7 +34,7 @@ void test_assignment_operator_a();
 void test_assignment_operator_c();
 
 //Non-member functions
-//TODO: test_operator_plus_a();
+void test_operator_plus_a();
 //TODO: test_operator_plus_b();
 void test_operator_plus_c();
 

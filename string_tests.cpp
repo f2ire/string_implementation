@@ -102,7 +102,11 @@ void test_assignment_operator_c() {
 }
 
 //Non-member fonctions
-//TODO: test operator_plus_a()
+void test_operator_plus_a() {
+    String str1 = String();
+    String str3 = str1 + "2nd Hello World";
+    std::cout << str3.c_str() << std::endl;
+}
 
 //TODO: test operator_plus_b()
 

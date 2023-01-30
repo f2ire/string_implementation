@@ -38,7 +38,7 @@ public:
     String& operator=(const char*); //C
 
     //Non-member functions
-    String operator+(const char* rhs);//A TODO: To change : shouuld be operator+(const string&, const char*)
+    friend String operator+(const String&, const char* chr);//A TODO: To change : shouuld be operator+(const string&, const char*)
     //TODO: String operator+(const String&, char); //B
     friend String operator+(const String& str1, const String& str2); //C
     // implicit meaning operator+ is not member, and static don't work bc of operator
@@ -54,6 +54,6 @@ private:
 };
 
 String operator+(const String& str1, const String& str2); //friend dont declare
-
+String operator+(const String&, const char* chr); //friend dont declare
 
 #endif //STRING_PROJECT_STRING_H
