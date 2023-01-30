@@ -72,11 +72,11 @@ void String::clear(){
 
 }
 
-int String::size() {
+int String::size() const {
     return size_;
 }
 
-int String::length() {
+int String::length() const {
     return length_;
 }
 

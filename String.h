@@ -21,8 +21,8 @@ public:
 
     //Capacity
     void clear(); //A
-    int size(); //A
-    int length(); //B
+    int size() const; //A
+    int length() const; //B
     int max_size() const; //B
     int capacity() const; //C
     bool empty() const; //C
