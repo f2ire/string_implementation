@@ -8,22 +8,12 @@
 //Constructors
 String::String()
 {
-    char* txt = new char[12];
-    const char* txt_to_copy = "Hello World";
-    for (int i = 0; i <= 11; i++) {
-        txt[i] = txt_to_copy[i];
-    }
-    length_ = 11;
-    size_ = 11;
-    content_ = txt;
-    capacity_ = 11;
-    /*
     char* txt = new char[1];
     const char* txt_to_copy = "";
     txt[0] = txt_to_copy[0];
     length_ = 0;
     content_ = txt;
-     */
+    size_ = 0;
 }
 
 String::String(const String& other) {

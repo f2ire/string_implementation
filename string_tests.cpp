@@ -14,7 +14,7 @@ void test_default_constr() {
 }
 
 void test_copy_constr() {
-    String str = String();
+    String str = String("Hello World");
     String str2 = String(str);
     const char* cont = str.c_str();
     const char* cont2 = str2.c_str();
@@ -50,22 +50,22 @@ void test_clear() {
 }
 
 void test_size() {
-    String str = String();
+    String str = String("Hello World");
     std::cout << str.size() << std::endl;
 }
 
 void test_length() {
-    String str = String();
+    String str = String("Hello World");
     std::cout << str.length() << std::endl;
 }
 
 void test_max_size() {
-    String str = String();
+    String str = String("Hello World");
     std::cout << str.max_size() << std::endl;
 }
 
 void test_capacity(){
-    String str = String();
+    String str = String("Hello World");
     std::cout << str.capacity() << std::endl;
 }
 
@@ -75,7 +75,7 @@ void test_empty(){
 }
 
 void test_reserve() {
-    String str = String();
+    String str = String("Hello World");
     std::cout << "Capacity of " << str.capacity() << " bytes" << std::endl;
     str.reserve(50);
     std::cout << "Capacity of " << str.capacity() << " bytes, after reserved 50 bytes" << std::endl;
@@ -83,7 +83,7 @@ void test_reserve() {
 
 //Operations
 void test_resize() {
-    String str = String();
+    String str = String("Hello World");
     std::cout << "Size of " << str.size() << " and content is " << str.c_str() << std::endl;
     str.resize(49, 'A');
     std::cout << "Size of " << str.size() <<
@@ -104,14 +104,14 @@ void test_assignment_operator_a() {
 }
 
 void test_assignment_operator_b() {
-    String str = String();
+    String str = String("Hello World");
     String str2 = String("Hello World2");
     str = str2;
     std::cout << str.c_str() << std::endl;
 }
 
 void test_assignment_operator_c() {
-    String str = String();
+    String str = String("Hello World");
     const char* cont = "Hello World";
     str = cont;
     std::cout << str.c_str() << std::endl;
@@ -119,20 +119,20 @@ void test_assignment_operator_c() {
 
 //Non-member functions
 void test_operator_plus_a() {
-    String str1 = String();
+    String str1 = String("Hello World");
     String str3 = str1 + "2nd Hello World";
     std::cout << str3.c_str() << std::endl;
 }
 
 void test_operator_plus_b() {
-    String str1 = String();
+    String str1 = String("Hello World");
     String str3 = str1 + 'A';
     std::cout << str3.c_str() << std::endl;
 }
 
 void test_operator_plus_c() {
-    const auto str1 = String();
-    const auto str2 = String();
+    const auto str1 = String("Hello World");
+    const auto str2 = String("Hello World");
     String str3 = str1 + str2;
     std::cout << str3.c_str() << std::endl;
 }
